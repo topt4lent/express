@@ -26,7 +26,11 @@ app.get('/', function (req, res, next) {
     }
   );
 
-
+app.get('/x', function (req, res, next) {
+  
+      res.send('555555');
+    }
+  );
 
 
 
