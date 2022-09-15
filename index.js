@@ -4,13 +4,13 @@ var express = require('express')
 var cors = require('cors')
 const mysql = require('mysql2');
 
-/*
+
 const connection = mysql.createConnection({
-  host: 'localhost',
+  host: 'https://demo.phpmyadmin.net',
   user: 'root',
-  database: 'top_db'
+  database: 'users'
 });
-*/
+
 
 var app = express()
 app.use(cors())
@@ -34,19 +34,19 @@ app.get('/x', function (req, res, next) {
 
 
 
-app.get('/user', function (req, res, next) {
+app.get('/users', function (req, res, next) {
     connection.query(
-      'SELECT * FROM `user_t`',
+      'SELECT * FROM `user`',
       function(err, results, fields) {
         res.json(results);
       }
     );
   })
   
-  app.get('/user/:id', function (req, res, next) {
+  app.get('/users/:id', function (req, res, next) {
     const id = req.params.id;
     connection.query(
-      'SELECT * FROM `user_t` WHERE `u_id` = ?',
+      'SELECT * FROM `user` WHERE `id` = ?',
       [id],
       function(err, results) {
         res.json(results);
