@@ -4,14 +4,14 @@ var express = require('express')
 var cors = require('cors')
 const mysql = require('mysql2');
 
-
+/*
 const connection = mysql.createConnection({
   host: 'https://demo.phpmyadmin.net/master-config',
   user: 'root',
   password: '',
   database: 'top_db'
 });
-
+*/
 
 var app = express()
 app.use(cors())
