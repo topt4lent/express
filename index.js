@@ -8,7 +8,7 @@ const mysql = require('mysql2');
 const connection = mysql.createConnection({
   host: 'https://demo.phpmyadmin.net/master-config',
   user: 'root',
-  database: 'users'
+  database: 'top_db'
 });
 
 
